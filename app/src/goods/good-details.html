@@ -1,0 +1,58 @@
+<ion-view view-title="{{goodDetailsCtrl.name}}">
+
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon ion-navicon"
+                ng-click="goodDetailsCtrl.showSubmit()">
+        </button>
+    </ion-nav-buttons>
+
+
+    <ion-content class="padding">
+
+        <h2 align="center">{{goodDetailsCtrl.name}}</h2>
+
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label"><b>Name:</b></span>
+                <input type="text"
+                       ng-model="goodDetailsCtrl.name">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>ID:</b></span>
+                <input type="text"
+                       ng-model="goodDetailsCtrl.id">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Price:</b></span>
+                <input type="text"
+                       ng-model="goodDetailsCtrl.price">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Quantity:</b></span>
+                <input type="text"
+                       ng-model="goodDetailsCtrl.quantity">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Store:</b></span>
+                <input type="text"
+                       ng-model="goodDetailsCtrl.store">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Description:</b></span>
+                <input type="text"
+                       ng-model="goodDetailsCtrl.description">
+            </label>
+        </div>
+
+    </ion-content>
+
+    <div ng-if="goodDetailsCtrl.submitShowed" class="badge-div" ng-click="goodDetailsCtrl.goodSubmit()">
+        <div class="badge-icon ion-checkmark"></div>
+    </div>
+
+</ion-view>
