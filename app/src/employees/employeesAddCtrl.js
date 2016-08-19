@@ -3,11 +3,11 @@
 
     angular
         .module('app')
-        .controller('ClientDetailsCtrl', ClientDetailsCtrl);
+        .controller('EmployeesAddCtrl', EmployeesAddCtrl);
 
-    ClientDetailsCtrl.$inject = ['$rootScope', '$state', '$stateParams', '$filter', 'ClientsService', '$ionicLoading'];
+    EmployeesAddCtrl.$inject = ['$rootScope', '$state', '$stateParams', 'EmployeesService', '$ionicLoading'];
 
-    function ClientDetailsCtrl($rootScope, $state, $stateParams, $filter, ClientsService, $ionicLoading) {
+    function EmployeesAddCtrl($rootScope, $state, $stateParams, EmployeesService, $ionicLoading) {
         var vm = this;
 
         angular.extend(vm, {
@@ -22,7 +22,6 @@
 
         function init() {
             vm.submitShowed = false;
-            vm.total = $filter('number')(vm.sum, 2);
         }
 
         function showSubmit() {
@@ -30,24 +29,29 @@
         }
 
         function clientSubmit() {
+            if (vm.form.$invalid) {
+                return;
+            }
+
             $ionicLoading.show({
                 template: '<ion-spinner></ion-spinner>'
             });
 
+            var id = (Math.random() * 1000000).toFixed();
             var item = {
-                id: vm.id,
+                id: id,
                 name: vm.name,
                 address: vm.address,
                 phone: vm.phone,
-                sum: vm.sum,
+                description: vm.description,
                 cv: vm.cv,
-                description: vm.description
+                sum: 0
             };
 
-            ClientsService.editItem(item)
+            EmployeesService.addItem(item)
                 .then(function () {
                     $ionicLoading.hide();
-                    $state.go('root.clients', {}, {reload: true});
+                    $state.go('root.employees', {}, {reload: true});
                 })
                 .catch(errorHandler);
         }

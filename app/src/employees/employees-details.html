@@ -1,66 +1,66 @@
-<ion-view view-title="{{clientDetailsCtrl.name}}">
+<ion-view view-title="{{employeesDetailsCtrl.name}}">
 
     <ion-nav-buttons side="secondary">
         <button class="button button-icon ion-navicon"
-                ng-click="clientDetailsCtrl.showSubmit()">
+                ng-click="employeesDetailsCtrl.showSubmit()">
         </button>
     </ion-nav-buttons>
 
 
     <ion-content class="padding">
 
-        <h2 align="center">{{clientDetailsCtrl.name}}</h2>
+        <h2 align="center">{{employeesDetailsCtrl.name}}</h2>
 
         <div class="list">
             <label class="item item-input">
                 <span class="input-label"><b>Name:</b></span>
                 <input type="text"
-                       ng-model="clientDetailsCtrl.name">
+                       ng-model="employeesDetailsCtrl.name">
             </label>
 
             <label class="item item-input">
                 <span class="input-label"><b>ID:</b></span>
                 <input type="text"
-                       ng-model="clientDetailsCtrl.id">
+                       ng-model="employeesDetailsCtrl.id">
             </label>
 
             <label class="item item-input">
                 <span class="input-label"><b>Phone:</b></span>
                 <input type="text"
-                       ng-model="clientDetailsCtrl.phone">
+                       ng-model="employeesDetailsCtrl.phone">
             </label>
 
             <label class="item item-input">
                 <span class="input-label"><b>Address:</b></span>
                 <textarea rows="2" style1="width: 62%"
-                          ng-model="clientDetailsCtrl.address">
+                          ng-model="employeesDetailsCtrl.address">
                 </textarea>
             </label>
 
             <label class="item item-input">
                 <span class="input-label"><b>Details:</b></span>
                 <textarea rows="2" style1="width: 62%"
-                          ng-model="clientDetailsCtrl.cv">
+                          ng-model="employeesDetailsCtrl.cv">
                 </textarea>
             </label>
 
             <label class="item item-input">
                 <span class="input-label"><b>Description:</b></span>
                 <textarea rows="2" style1="width: 62%"
-                          ng-model="clientDetailsCtrl.description">
+                          ng-model="employeesDetailsCtrl.description">
                 </textarea>
             </label>
 
             <label class="item item-input">
                 <span class="input-label"><b>Total:</b></span>
                 <input type="text"
-                       ng-model="clientDetailsCtrl.total">
+                       ng-model="employeesDetailsCtrl.total">
             </label>
         </div>
 
     </ion-content>
 
-    <div ng-if="clientDetailsCtrl.submitShowed" class="badge-div" ng-click="clientDetailsCtrl.clientSubmit()">
+    <div ng-if="employeesDetailsCtrl.submitShowed" class="badge-div" ng-click="employeesDetailsCtrl.clientSubmit()">
         <div class="badge-icon ion-checkmark"></div>
     </div>
 

@@ -2,11 +2,11 @@
     'use strict';
     angular
         .module('app')
-        .factory('ClientsService', ClientsService);
+        .factory('EmployeesService', EmployeesService);
 
-    ClientsService.$inject = ['$rootScope', '$http'];
+    EmployeesService.$inject = ['$rootScope', '$http'];
 
-    function ClientsService($rootScope, $http) {
+    function EmployeesService($rootScope, $http) {
         var webUrl = $rootScope.myConfig.webUrl;
 
         return {
@@ -18,7 +18,7 @@
         };
 
         function getClients() {
-            var url = webUrl + 'api/clients/get';
+            var url = webUrl + 'api/employees/get';
             return $http.get(url)
                 .then(function (result) {
                     result.data.sort(sort);
@@ -27,7 +27,7 @@
         }
 
         function addItem(item) {
-            var url = webUrl + 'api/clients/add';
+            var url = webUrl + 'api/employees/add';
             return $http.post(url, item)
                 .then(function (result) {
                     return result;
@@ -35,7 +35,7 @@
         }
 
         function editItem(item) {
-            var url = webUrl + 'api/clients/update';
+            var url = webUrl + 'api/employees/update';
             return $http.post(url, item)
                 .then(function (result) {
                     return result;
@@ -43,7 +43,7 @@
         }
 
         function deleteItem(id) {
-            var url = webUrl + 'api/clients/delete';
+            var url = webUrl + 'api/employees/delete';
             var item = {
                 "id": id
             };

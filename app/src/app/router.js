@@ -27,46 +27,46 @@
                 }
             })
 
-            .state('root.clients', {
-                url: '/clients',
+            .state('root.employees', {
+                url: '/employees',
                 data: {
                     requireLogin: true
                 },
                 views: {
-                    'root-clients': {
-                        templateUrl: 'clients/clients.html',
-                        controller: 'ClientsCtrl',
-                        controllerAs: 'clientsCtrl'
+                    'root-employees': {
+                        templateUrl: 'employees/employees.html',
+                        controller: 'EmployeesCtrl',
+                        controllerAs: 'employeesCtrl'
                     }
                 }
             })
 
-            .state('root.client-details', {
-                url: '/client-details',
+            .state('root.employees-details', {
+                url: '/employees-details',
                 data: {
                     requireLogin: true
                 },
                 params: {item: {}},
                 views: {
-                    'root-clients': {
-                        templateUrl: 'clients/client-details.html',
-                        controller: 'ClientDetailsCtrl',
-                        controllerAs: 'clientDetailsCtrl'
+                    'root-employees': {
+                        templateUrl: 'employees/employees-details.html',
+                        controller: 'EmployeesDetailsCtrl',
+                        controllerAs: 'employeesDetailsCtrl'
                     }
                 }
             })
 
-            .state('root.client-add', {
-                url: '/client-add',
+            .state('root.employees-add', {
+                url: '/employees-add',
                 data: {
                     requireLogin: true
                 },
                 params: {item: {}},
                 views: {
-                    'root-clients': {
-                        templateUrl: 'clients/client-add.html',
-                        controller: 'ClientAddCtrl',
-                        controllerAs: 'clientAddCtrl'
+                    'root-employees': {
+                        templateUrl: 'employees/employees-add.html',
+                        controller: 'EmployeesAddCtrl',
+                        controllerAs: 'employeesAddCtrl'
                     }
                 }
             })

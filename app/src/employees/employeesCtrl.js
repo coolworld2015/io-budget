@@ -3,12 +3,12 @@
 
     angular
         .module('app')
-        .controller('ClientsCtrl', ClientsCtrl);
+        .controller('EmployeesCtrl', EmployeesCtrl);
 
-    ClientsCtrl.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'ClientsService',
+    EmployeesCtrl.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'EmployeesService',
         '$ionicLoading', '$ionicPopup', '$ionicListDelegate'];
 
-    function ClientsCtrl($scope, $rootScope, $state, $stateParams, ClientsService, $ionicLoading, $ionicPopup, $ionicListDelegate) {
+    function EmployeesCtrl($scope, $rootScope, $state, $stateParams, EmployeesService, $ionicLoading, $ionicPopup, $ionicListDelegate) {
         var vm = this;
 
         angular.extend(vm, {
@@ -37,7 +37,7 @@
             vm.addShowed = false;
             $rootScope.raisedError = false;
 
-            ClientsService.getClients()
+            EmployeesService.getClients()
                 .then(function (result) {
                     vm.clients = result.data;
                     $ionicLoading.hide();
@@ -52,7 +52,7 @@
         function addConfirm(client) {
             var confirmPopup = $ionicPopup.confirm({
                 title: 'Add client',
-                template: 'Are you sure you want to add new client?'
+                template: 'Are you sure you want to add new employee?'
             });
 
             confirmPopup.then(function (res) {
@@ -84,7 +84,7 @@
             $ionicLoading.show({
                 template: '<ion-spinner></ion-spinner>'
             });
-            ClientsService.deleteItem(id)
+            EmployeesService.deleteItem(id)
                 .then(function () {
                     init();
                 })
@@ -96,7 +96,7 @@
         function doRefresh() {
             vm.clients = [];
             vm.clear = false;
-            ClientsService.getClients()
+            EmployeesService.getClients()
                 .then(function (result) {
                     vm.clients = result.data;
                     $scope.$broadcast('scroll.refreshComplete');
@@ -116,11 +116,11 @@
         }
 
         function clientAdd() {
-            $state.go('root.client-add');
+            $state.go('root.employees-add');
         }
 
         function clientDetails(item) {
-            $state.go('root.client-details', {item: item});
+            $state.go('root.employees-details', {item: item});
         }
 
         function errorHandler() {
