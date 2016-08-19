@@ -121,7 +121,7 @@
                     requireLogin: true
                 },
                 views: {
-                    'root-audit': {
+                    'root-grid': {
                         templateUrl: 'audit/audit.html',
                         controller: 'AuditCtrl',
                         controllerAs: 'auditCtrl'
@@ -136,7 +136,7 @@
                 },
                 params: {item: {}},
                 views: {
-                    'root-audit': {
+                    'root-grid': {
                         templateUrl: 'audit/audit-details.html',
                         controller: 'AuditDetailsCtrl',
                         controllerAs: 'auditDetailsCtrl'
@@ -150,7 +150,7 @@
                     requireLogin: true
                 },
                 views: {
-                    'root-users': {
+                    'root-grid': {
                         templateUrl: 'users/users.html',
                         controller: 'UsersCtrl',
                         controllerAs: 'usersCtrl'
@@ -165,7 +165,7 @@
                 },
                 params: {item: {}},
                 views: {
-                    'root-users': {
+                    'root-grid': {
                         templateUrl: 'users/user-details.html',
                         controller: 'UserDetailsCtrl',
                         controllerAs: 'userDetailsCtrl'
@@ -180,7 +180,7 @@
                 },
                 params: {item: {}},
                 views: {
-                    'root-users': {
+                    'root-grid': {
                         templateUrl: 'users/user-add.html',
                         controller: 'UserAddCtrl',
                         controllerAs: 'userAddCtrl'
